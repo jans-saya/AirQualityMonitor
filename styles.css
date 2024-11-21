@@ -1,0 +1,129 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.metric-card {
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 0.75rem;  
+}
+
+.gauge-container {
+    position: relative;
+    height: 100px;    
+    width: 100%;
+}
+
+.chart-container {
+    position: relative;
+    height: 160px;    
+    width: 100%;
+}
+
+.value-display {
+    font-size: 1rem;  
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem 0; 
+}
+
+.metric-label {
+    color: #808080;
+    font-size: 0.75rem; 
+    text-align: center;
+}
+
+#loadingIndicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#errorMessage {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    display: none;
+    z-index: 1000;
+}
+
+.loading-content {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+}
+
+.loading-content p {
+    color: #1a1a1a;
+    font-size: 0.875rem;
+}
+.metric-card {
+    position: relative;
+}
+
+.metric-card:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    white-space: pre-line;
+    z-index: 10;
+}
+
+.value-display {
+    transition: color 0.3s ease;
+}
+.status-container {
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-dot.good {
+    background-color: #40E0D0;  
+}
+
+.color-dot.moderate {
+    background-color: #FFD700;  
+}
+
+.color-dot.dangerous {
+    background-color: #FF4D4D;  
+}
+
+.status-text {
+    font-size: 0.75rem;
+    color: #ffffff;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Monitor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900">
+    <nav class="container mx-auto p-2">
+        <div class="flex justify-between items-center">
+            <div class="text-lg font-bold">Air Quality Monitor</div>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white">Data</a>
+                <a href="#" class="text-gray-300 hover:text-white">About</a>
+            </div>
+        </div>
+    </nav>
+    
+<div class="container mx-auto p-2">
+    <div class="grid grid-cols-3 gap-2 mb-4 status-container">
+        <div class="status-item">
+            <span class="color-dot good"></span>
+            <span class="status-text">Safe Level</span>
+        </div>
+        <div class="status-item">
+            <span class="color-dot moderate"></span>
+            <span class="status-text">Caution Level</span>
+        </div>
+        <div class="status-item">
+            <span class="color-dot dangerous"></span>
+            <span class="status-text">Warning Level</span>
+        </div>
+    </div>
+</div>
+
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-3 gap-4">
+            <div class="metric-card">
+                <h3 class="text-center mb-2">Temperature</h3>
+                <div class="gauge-container">
+                    <canvas id="temperatureGauge"></canvas>
+                </div>
+                <div id="temperatureValue" class="value-display">25°C</div>
+                <div class="metric-label">Celsius</div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-center mb-2">Humidity</h3>
+                <div class="gauge-container">
+                    <canvas id="humidityGauge"></canvas>
+                </div>
+                <div id="humidityValue" class="value-display">45%</div>
+                <div class="metric-label">Relative Humidity</div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-center mb-2">PM2.5</h3>
+                <div class="gauge-container">
+                    <canvas id="pm25Gauge"></canvas>
+                </div>
+                <div id="pm25Value" class="value-display">12 µg/m³</div>
+                <div class="metric-label">Fine Particulate Matter</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="metric-card">
+                <h3 class="text-center mb-2">Gas Levels</h3>
+                <div class="chart-container">
+                    <canvas id="gasLevelsChart"></canvas>
+                </div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-center mb-2">Pollutant Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="particleChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 mt-4">
+            <div class="metric-card">
+                <h3 class="text-sm text-gray-400 text-center">NOx</h3>
+                <div id="noxValue" class="value-display">30 ppb</div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-sm text-gray-400 text-center">CO2</h3>
+                <div id="co2Value" class="value-display">410 ppm</div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-sm text-gray-400 text-center">SO2</h3>
+                <div id="so2Value" class="value-display">5 ppb</div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-sm text-gray-400 text-center">VOC</h3>
+                <div id="vocValue" class="value-display">120 ppb</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container mx-auto p-4">
+        <div class="grid grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-bold mb-2">About</h4>
+                <p class="text-gray-400">Real-time monitoring</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-2">Resources</h4>
+                <a href="#" class="text-gray-400 hover:text-white">Documentation</a>
+            </div>
+            <div>
+                <h4 class="font-bold mb-2">Contact</h4>
+                <p class="text-gray-400">support@airquality.com</p>
+            </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-gray-700 text-center text-gray-400">
+            <p>© 2024 Air Quality Monitor</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
