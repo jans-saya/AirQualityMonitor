@@ -37,7 +37,7 @@ A real-time air quality monitoring system that visualizes various environmental 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/jans-saya/air-quality-monitor.git
+git clone https://github.com/jans-saya/AirQualityMonitor.git
 ```
 
 2. Navigate to project directory:
